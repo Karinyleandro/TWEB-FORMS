@@ -1,11 +1,93 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TWEB-FORMS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inscrição nos jogos escolares</title>
 </head>
+
 <body>
-    
+    <header>
+        <h1>Inscrição nos jogos escolares</h1>
+        <p>Preencha os campos abaixo com suas informações.</p>
+    </header>
+    <main>
+
+        <form id="inscricao-jogos" action="/inscricoes-jogos" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Identificação do atleta</legend>
+                <label for="nome-atleta">Nome completo do atleta (obrigatório)</label>
+                <input type="text" id="nome-atleta" name="nome_atleta" required>
+                <br><br>
+                <label for="email-atleta">E-mail de contato (obrigatório)</label>
+                <input type="email" id="email-atleta" name="email-atleta" value="email@gmail.com" required>
+                <br><br>
+                <label for="matricula-atleta">Matrícula completa do atleta (obrigatório)</label>
+                <input type="text" id="matricula-atleta" name="matricula-atleta" required>
+                <br><br>
+                <label for="datanascimento-atleta">Data de nascimento (obrigatório)</label>
+                <input type="date" id="nascimento-atleta" name="nascimento-atleta" required>
+                <br><br>
+                <label for="site-escolar">Site da escola</label>
+                <input type="url" id="site-escola" name="site-escola" value="https://siteescolar.com.br" required>
+                <br><br>
+                <label for="telefone-atleta">Telefone do aluno (obrigatório)</label>
+                <input type="tel" id="numero-atleta" name="numero-atleta" value="(55) 88 993363683">
+                <br><br>
+            </fieldset>
+
+            <br>
+
+            <fieldset>
+                <legend>Escola e delegação</legend>
+                <label for="equipe">Nome da equipe</label>
+                <input type="text" id="equipe" name="equipe" value="Belo Horizonte">
+                <label for=""></label>
+                <br><br>
+                <label for="turma-atleta">Turma Atleta</label>
+                <select name="Turma-atleta" id="urma-atleta">
+                    <option value="">Selecione uma turma</option>
+                    <optgroup label="Ensino Fundamental">
+                        <option value="1° ao 9° ano">1° ao 9° ano</option>
+                    </optgroup>
+                    <optgroup label="Ensino Médio">
+                        <option value="1° ao 3° ano">1° ao 3° ano</option>
+                    </optgroup>
+                </select>
+
+                <br><br>
+                <label for="matricula-atleta">Escola de origem (com sugestão)</label>
+                <input type="text" id="escoladeorigem-atleta" name="escoladeorigem-atleta" required>
+                <datalist>
+                    
+                </datalist>
+
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Turno de preferência</legend>
+                <input type="radio" id="turno-manha" name="turno" value="manha" checked>
+                <label for="turno-manha">Manhã</label> <br><br>
+                <input type="radio" id="turno-tarde" name="turno" value="tarde">
+                <label for="turno-tarde">Tarde</label>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Modalidades de Interesse</legend>
+                <input type="checkbox" id="interesse-futsal" name="modalidades" value="futsal" checked>
+                <label for="interesse-futsal">Futsal</label>
+                <input type="checkbox" id="interesse-voleibol" name="modalidades" value="voleibol">
+                <label for="interesse-futsal">Vôlei</label>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Participação nos jogos</legend>
+
+            </fieldset>
+        </form>
+
+    </main>
 </body>
+
 </html>
