@@ -15,36 +15,65 @@
     <main>
 
         <form id="inscricao-jogos" action="/inscricoes-jogos" method="post" enctype="multipart/form-data">
+            
             <fieldset>
-                <legend>Identificação do atleta</legend>
+                <legend>
+                    <ol type="1">
+                        <li>Identificação do atleta</ol>
+                    
+                    </ol>
+                </legend>
+
                 <label for="nome-atleta">Nome completo do atleta (obrigatório)</label>
                 <input type="text" id="nome-atleta" name="nome_atleta" required>
                 <br><br>
-                <label for="email-atleta">E-mail de contato (obrigatório)</label>
-                <input type="email" id="email-atleta" name="email-atleta" value="email@gmail.com" required>
+
+                <label for="nome-social">Nome Social</label>
+                <input type="text" id="nome-social" name="nome-social">
                 <br><br>
+
                 <label for="matricula-atleta">Matrícula completa do atleta (obrigatório)</label>
                 <input type="text" id="matricula-atleta" name="matricula-atleta" required>
                 <br><br>
+
                 <label for="datanascimento-atleta">Data de nascimento (obrigatório)</label>
                 <input type="date" id="nascimento-atleta" name="nascimento-atleta" required>
                 <br><br>
-                <label for="site-escolar">Site da escola</label>
-                <input type="url" id="site-escola" name="site-escola" value="https://siteescolar.com.br" required>
+
+                <label for="email-atleta">E-mail de contato (obrigatório)</label>
+                <input type="email" id="email-atleta" name="email-atleta" value="email@gmail.com" required>
                 <br><br>
+
                 <label for="telefone-atleta">Telefone do aluno (obrigatório)</label>
                 <input type="tel" id="numero-atleta" name="numero-atleta" value="(55) 88 993363683">
                 <br><br>
+
+                <label for="site-escolar">Site da escola</label>
+                <input type="url" id="site-escola" name="site-escola" value="https://siteescolar.com.br" required>
+                <br><br>
+
             </fieldset>
 
             <br>
 
             <fieldset>
-                <legend>Escola e delegação</legend>
-                <label for="equipe">Nome da equipe</label>
-                <input type="text" id="equipe" name="equipe" value="Belo Horizonte">
-                <label for=""></label>
+                <legend>
+                    <ol type="1" start="2">
+                        <li>Escola e delegação</li>
+                    </ol>
+                </legend>
+
+                <label for="escola">Escola de origem (com sugestão)</label>
+                <input type="search" id="escola" name="escolas" list="escolas" value="Escola Aurora">
+                <datalist id="escolas">
+                    <option value="Martins Alcântara"></option>
+                    <option value="Fernando Torres"></option>
+                    <option value="IFCE"></option>
+                    <option value="Escola Aurora"></option>
+                </datalist>
+
                 <br><br>
+
                 <label for="turma-atleta">Turma Atleta</label>
                 <select name="Turma-atleta" id="urma-atleta">
                     <option value="">Selecione uma turma</option>
@@ -57,31 +86,118 @@
                 </select>
 
                 <br><br>
-                <label for="escola">Escola de origem (com sugestão)</label>
-                <input type="search" id="escola" name="escolas" list="escolas">
-                <datalist id="escolas">
-                    <option value="Martins Alcântara"></option>
-                    <option value="Fernando Torres"></option>
-                    <option value="IFCE"></option>
-                </datalist>
+
+                <label for="equipe">Nome da equipe</label>
+                <input type="text" id="equipe" name="equipe" value="Belo Horizonte">
+                <label for=""></label>
+
+                <br><br>
+
+                <label for="professor-responsavel">Professor Responsável</label>
+                <input type="text" id="professor" name="professor" value="José Olinda">
+
+                <br><br>
+
+                <label for="telefone-professor">Telefone do Professor responsável</label>
+                <input type="tel" id="telefone-professor" name="telefone-professor" value="(55) 88 94567689">
+
 
             </fieldset>
             <br>
+
             <fieldset>
-                <legend>Turno de preferência</legend>
-                <input type="radio" id="turno-manha" name="turno" value="manha" checked>
-                <label for="turno-manha">Manhã</label> <br><br>
-                <input type="radio" id="turno-tarde" name="turno" value="tarde">
-                <label for="turno-tarde">Tarde</label>
+                <legend>
+                    <ol type="1" start="3">
+                        <li>Participação nos Jogos</li>
+                    </ol>
+                </legend>
+
+                <label for="modalidades-principais">Modalidade principal (obrigatória)</label>
+                <select name="modalidades-principais" id="modalidades-principais">
+                    <option value="">Selecione sua modalidade</option>
+                    <optgroup label="Principais Modalidades">
+                        <option value="Vôleibol">Vôleibol</option>
+                        <option value="Futsal">Futsal</option>
+                        <option value="Futebol">Futebol</option>
+                        <option value="Basquete">Basquete</option>
+                    </optgroup>
+                </select>
+                <br>
+
+                <fieldset>
+                    <legend>Turno de Preferência</legend>
+                    <input type="radio" id="turno-manha" name="turno" value="manha" checked>
+                    <label for="turno-manha">Manhã</label>
+                    <input type="radio" id="turno-tarde" name="turno" value="tarde">
+                    <label for="turno-tarde">Tarde</label>
+                    <input type="radio" id="turno-noite" name="turno" value="noite">
+                    <label for="turno-noite">Noite</label>
+                </fieldset>
+                <br>
+
+                <fieldset>
+                    <legend>Modalidades de Interesse (permite mais de uma escolha)</legend>
+                    <input type="checkbox" id="interesse-futsal" name="modalidades" value="futsal" checked>
+                    <label for="interesse-futsal">Futsal</label>
+
+                    <input type="checkbox" id="interesse-voleibol" name="modalidades" value="voleibol">
+                    <label for="interesse-futsal">Vôlei</label>
+
+                    <input type="checkbox" id="interesse-basquetebol" name="modalidades" value="basquetebol">
+                    <label for="interesse-basquetebol">Basquetebol</label>
+
+                    <input type="checkbox" id="interesse-handebol" name="modalidades" value="handebol">
+                    <label for="interesse-handebol">Handebol</label>
+
+                    <input type="checkbox" id="interesse-atletismo" name="modalidades" value="atletismo">
+                    <label for="interesse-atletismo">Atletismo</label>
+
+                    <input type="checkbox" id="interesse-natacao" name="modalidades" value="natacao">
+                    <label for="interesse-natacao">Natação</label>
+
+                    <input type="checkbox" id="interesse-xadrez" name="modalidades" value="xadrez">
+                    <label for="interesse-xadrez">Xadrez</label>
+                    
+                    <input type="checkbox" id="interesse-tenismesa" name="modalidades" value="tenismesa">
+                    <label for="interesse-tenismesa">Tênis de mesa</label>
+                </fieldset>
+                <br>
+                <label for="tamanho-camisa">Tamanho da Camiseta</label>
+                <select name="tamanho-camisa" id="tamanho-camisa">
+                    <option value="Selecione um tamanho">Selecione um tamanho</option>
+                    <optgroup label="Tamanhos-principais">
+                        <option value="PP">PP</option>
+                        <option value="P">P</option>
+                        <option value="M">M</option>
+                        <option value="G">G</option>
+                        <option value="GG">GG</option>
+                    </optgroup>
+                    <optgroup label="Pluz-size">
+                        <option value="G1">G1</option>
+                        <option value="G2">G2</option>
+                        <option value="G3">G3</option>
+                    </optgroup>
+                </select>
+
+                <fieldset>
+                    <legend>Participação em atividades complementares</legend>
+                    <input type="checkbox" id="atividade-commplementar" name="abertura" checked>
+                    <label for="atividade-commplementar">Cerimônia de abertura</label> <br>
+
+                    <input type="checkbox" id="atividade-commplementar" name="oficina">
+                    <label for="atividade-commplementar">Oficina de arbitragem</label> <br>
+
+                    <input type="checkbox" id="atividade-commplementar" name="organização"> 
+                    <label for="atividade-commplementar">Organização das equipes</label>
+                </fieldset>
+                <br>
+
+                <label for="quantidade-acompanhantes">Quantidade de Acompanhantes</label>
+                <input type="number" name="quantidade-acompanhantes" id="quantidade-acompanhantes">
             </fieldset>
+
             <br>
-            <fieldset>
-                <legend>Modalidades de Interesse</legend>
-                <input type="checkbox" id="interesse-futsal" name="modalidades" value="futsal" checked>
-                <label for="interesse-futsal">Futsal</label>
-                <input type="checkbox" id="interesse-voleibol" name="modalidades" value="voleibol">
-                <label for="interesse-futsal">Vôlei</label>
-            </fieldset>
+          
             <br>
             <fieldset>
                 <legend>Participação nos jogos</legend>
