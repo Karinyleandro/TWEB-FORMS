@@ -15,13 +15,13 @@
     <main>
 
         <form id="inscricao-jogos" action="/inscricoes-jogos" method="post" enctype="multipart/form-data">
-            
+
             <fieldset>
                 <legend>
                     <ol type="1">
-                        <li>Identificação do atleta</ol>
-                    
+                        <li>Identificação do atleta
                     </ol>
+
                 </legend>
 
                 <label for="nome-atleta">Nome completo do atleta (obrigatório)</label>
@@ -36,20 +36,20 @@
                 <input type="text" id="matricula-atleta" name="matricula-atleta" required>
                 <br><br>
 
-                <label for="datanascimento-atleta">Data de nascimento (obrigatório)</label>
-                <input type="date" id="nascimento-atleta" name="nascimento-atleta" required>
+                <label for="nascimento-atleta">Data de nascimento</label>
+                <input type="date" id="nascimento-atleta" name="nascimento-atleta">
                 <br><br>
 
                 <label for="email-atleta">E-mail de contato (obrigatório)</label>
                 <input type="email" id="email-atleta" name="email-atleta" value="email@gmail.com" required>
                 <br><br>
 
-                <label for="telefone-atleta">Telefone do aluno (obrigatório)</label>
+                <label for="numero-atleta">Telefone do aluno</label>
                 <input type="tel" id="numero-atleta" name="numero-atleta" value="(55) 88 993363683">
                 <br><br>
 
-                <label for="site-escolar">Site da escola</label>
-                <input type="url" id="site-escola" name="site-escola" value="https://siteescolar.com.br" required>
+                <label for="site-escola">Site da escola</label>
+                <input type="url" id="site-escola" name="site-escola" value="https://siteescolar.com.br">
                 <br><br>
 
             </fieldset>
@@ -70,18 +70,22 @@
                     <option value="Fernando Torres"></option>
                     <option value="IFCE"></option>
                     <option value="Escola Aurora"></option>
+                    <option value="Teresa Marques"></option>
                 </datalist>
 
                 <br><br>
 
                 <label for="turma-atleta">Turma Atleta</label>
-                <select name="Turma-atleta" id="urma-atleta">
+                <select name="turma-atleta" id="turma-atleta">
                     <option value="">Selecione uma turma</option>
                     <optgroup label="Ensino Fundamental">
-                        <option value="1° ao 9° ano">1° ao 9° ano</option>
+                        <option value="8° ano" selected>8° ano</option>
+                        <option value="9° ano">9° ano</option>
                     </optgroup>
                     <optgroup label="Ensino Médio">
-                        <option value="1° ao 3° ano">1° ao 3° ano</option>
+                        <option value="1° ano">1° ano</option>
+                        <option value="2° ano">2° ano</option>
+                        <option value="3° ano">3° ano</option>
                     </optgroup>
                 </select>
 
@@ -89,12 +93,11 @@
 
                 <label for="equipe">Nome da equipe</label>
                 <input type="text" id="equipe" name="equipe" value="Belo Horizonte">
-                <label for=""></label>
 
                 <br><br>
 
                 <label for="professor-responsavel">Professor Responsável</label>
-                <input type="text" id="professor" name="professor" value="José Olinda">
+                <input type="text" id="professor-responsavel" name="professor-responsavel" value="José Olinda">
 
                 <br><br>
 
@@ -113,13 +116,20 @@
                 </legend>
 
                 <label for="modalidades-principais">Modalidade principal (obrigatória)</label>
-                <select name="modalidades-principais" id="modalidades-principais">
+                <select name="modalidades-principais" id="modalidades-principais" required>
                     <option value="">Selecione sua modalidade</option>
-                    <optgroup label="Principais Modalidades">
-                        <option value="Vôleibol">Vôleibol</option>
+                    <optgroup label="Coletivas">
                         <option value="Futsal">Futsal</option>
-                        <option value="Futebol">Futebol</option>
-                        <option value="Basquete">Basquete</option>
+                        <option value="Vôleibol">Voleibol</option>
+                        <option value="Basquetebol">Basquetebol</option>
+                        <option value="Handebol">Handebol</option>
+                    </optgroup>
+
+                    <optgroup label="Individuais">
+                        <option value="atletismo">Atletismo</option>
+                        <option value="natacao">Natação</option>
+                        <option value="xadrez">Xadrez</option>
+                        <option value="tenis-mesa">Tênis de Mesa</option>
                     </optgroup>
                 </select>
                 <br>
@@ -141,7 +151,7 @@
                     <label for="interesse-futsal">Futsal</label>
 
                     <input type="checkbox" id="interesse-voleibol" name="modalidades" value="voleibol">
-                    <label for="interesse-futsal">Vôlei</label>
+                    <label for="interesse-voleibol">Vôlei</label>
 
                     <input type="checkbox" id="interesse-basquetebol" name="modalidades" value="basquetebol">
                     <label for="interesse-basquetebol">Basquetebol</label>
@@ -157,7 +167,7 @@
 
                     <input type="checkbox" id="interesse-xadrez" name="modalidades" value="xadrez">
                     <label for="interesse-xadrez">Xadrez</label>
-                    
+
                     <input type="checkbox" id="interesse-tenismesa" name="modalidades" value="tenismesa">
                     <label for="interesse-tenismesa">Tênis de mesa</label>
                 </fieldset>
@@ -181,29 +191,104 @@
 
                 <fieldset>
                     <legend>Participação em atividades complementares</legend>
-                    <input type="checkbox" id="atividade-commplementar" name="abertura" checked>
-                    <label for="atividade-commplementar">Cerimônia de abertura</label> <br>
+                    <input type="checkbox" id="abertura" name="abertura" value="abertura">
+                    <label for="abertura">Cerimônia de abertura</label> <br>
 
-                    <input type="checkbox" id="atividade-commplementar" name="oficina">
-                    <label for="atividade-commplementar">Oficina de arbitragem</label> <br>
+                    <input type="checkbox" id="oficina" name="oficina" value="oficina">
+                    <label for="oficina">Oficina de arbitragem</label> <br>
 
-                    <input type="checkbox" id="atividade-commplementar" name="organização"> 
-                    <label for="atividade-commplementar">Organização das equipes</label>
+                    <input type="checkbox" id="organizar" name="organizacao" value="organizar">
+                    <label for="organizar">Organização das equipes</label>
                 </fieldset>
                 <br>
 
                 <label for="quantidade-acompanhantes">Quantidade de Acompanhantes</label>
-                <input type="number" name="quantidade-acompanhantes" id="quantidade-acompanhantes">
+                <input type="number" name="quantidade-acompanhantes" id="quantidade-acompanhantes" value="2">
+            </fieldset>
+
+
+            <br>
+            <fieldset>
+
+                <legend>
+                    <ol type="1" start="4">
+                        <li>Preparação e disponibilidade</li>
+                    </ol>
+                </legend>
+
+                <label for="mes-preparacao">Mês de início da preparação</label>
+                <input type="month" name="mes-preparacao" id="mes-preparacao"><br><br>
+
+                <label for="semana-treinamento">Semana de Treinamento</label>
+                <input type="week" name="semana-treinamento" id="semana-treinamento"><br><br>
+
+                <label for="horario-chegada">Horário de chegada</label>
+                <input type="time" name="horario-chegada" id="horario-chegada"><br><br>
+
+                <label for="data-hora">Data e horário para resgatar Kit</label>
+                <input type="datetime-local" name="data-hora" id="data-hora">
             </fieldset>
 
             <br>
-          
-            <br>
+
             <fieldset>
-                <legend>Participação nos jogos</legend>
+                <legend>
+                    <ol type="1" start="5">
+                        <li> Preferências, anexo e observações</li>
+                    </ol>
+                </legend>
+
+                <label for="cor-delegacao">Cor da delegação</label>
+                <input type="color" name="cor-delegacao" id="cor-delegacao"> <br><br>
+
+                <label for="interesse-controle">Interesse nas atividades complementares, de O a 100</label>
+                <input type="range" id="interesse-controle" name="interesse-controle" min="0" max="100"><br><br>
+
+                <label for="documento">Anexe seus Documentos</label>
+                <input type="file" name="documento" id="documento"> <br><br>
+
+                <label for="observacoes">Observações</label>
+                <textarea id="observacoes" name="observacoes" rows="5" cols="100"></textarea>
+            </fieldset>
+
+            <br>
+
+            <fieldset>
+                <legend>
+                    <ol type="1" start="6">
+                        <li>Demonstrações e confirmação</li>
+                    </ol>
+                </legend>
+
+                <label for="senha">Senha segura</label>
+                <input type="password" name="senha" id="senha">
+                <p>Isso é apenas uma demonstração não utilize uma senha real</p>
+
+                <p><b>Exemplo fixo:</b> 1 atleta + 2 acompanhantes. Total de pessoas:  
+                    <output for="quantidade-acompanhantes" name="total_exemplo">3</output>
+                </p>
+                
+                <br>
+
+                <input type="checkbox" name="confirmar" id="confirmar" required>
+                <label for="confirmar">Li as orientações desta atividade (obrigatório).</label>
+
+                <br><br>
+                <button type="submit" name="acao" value="inscrever">
+                     Confirmar inscrição
+                </button>
+                <input type="submit" name="enviar-inscricao" value="Enviar inscrição">
+                <input type="reset" name="restaurar" value="Restaurar valores iniciais">
+                <input type="button" name="ajuda" value="Ajuda demonstrativa">
+                <p>A ajuda não possui ação adicional nesta parte. </p>
+                <p>A submissão não conclui um cadastro real nesta versão.</p>
+
+                 <input type="hidden" name="edicao" value="jogos-2026">
+
 
             </fieldset>
         </form>
+
 
     </main>
 </body>
